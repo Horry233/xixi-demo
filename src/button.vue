@@ -11,7 +11,16 @@
 
 <script>
 export default {
-  props: ['icon', 'iconPosition'] // 从index传入
+  props: { // 从index传入
+    icon: {}, 
+    iconPosition: {
+      type: String,
+      default: 'left',
+      validator(value) { // 验证传入的值是否正确 (属性检测器)
+        return value !== 'left' && value !== 'right' ? false : true
+      }
+    }
+    }
 }
 </script>
 
