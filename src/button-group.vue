@@ -23,7 +23,9 @@ export default {
   vertical-align: middle;
   > .x-button {
     border-radius: 0;
-    margin-left: -1px; // 使边框重叠
+    &:not(:first-child) {
+      margin-left: -1px; // 使边框重叠
+    }
     &:first-child {
       border-top-left-radius: var(--border-radius);
       border-bottom-left-radius: var(--border-radius);
