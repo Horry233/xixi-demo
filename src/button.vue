@@ -1,7 +1,8 @@
 <template>
-  <button class="x-button" :class="{[`icon-${iconPosition}`]: true}">
-    <x-icon v-if="icon" :name="icon" class="icon"></x-icon>
-    <x-icon class="loading" name="loading"></x-icon>
+  <button class="x-button" :class="{[`icon-${iconPosition}`]: true}"
+    @click="$emit('click')">
+    <x-icon v-if="icon && !loading" :name="icon" class="icon"></x-icon>
+    <x-icon class="loading icon" v-if="loading" name="loading"></x-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -18,7 +19,14 @@ export default {
       validator(value) { // 验证传入的值是否正确 (属性检测器)
         return value !== 'left' && value !== 'right' ? false : true
       }
-    }
+    },
+    loading: {
+        type: Boolean,
+        default: false
+      }
+    },
+    methods: {
+      
     }
 }
 </script>
