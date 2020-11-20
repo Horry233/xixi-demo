@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import Icon from './icon'
+
 export default {
   props: { // 从index传入
     icon: {}, 
@@ -27,6 +29,9 @@ export default {
     },
     methods: {
       
+    },
+    components: {
+      'x-icon': Icon
     }
 }
 </script>
