@@ -45,7 +45,7 @@ const expect = chai.expect
   const Constructor = Vue.extend(Button)
   const vm = new Constructor({
     propsData: {
-      icon: 'setting',
+      icon: 'settings',
       loading: true
     }
   })
@@ -64,7 +64,7 @@ const expect = chai.expect
   const Constructor = Vue.extend(Button)
   const vm = new Constructor({
     propsData: {
-      icon: 'setting'
+      icon: 'settings'
     }
   })
   vm.$mount(div)
@@ -81,7 +81,7 @@ const expect = chai.expect
   const Constructor = Vue.extend(Button)
   const vm = new Constructor({
     propsData: {
-      icon: 'setting',
+      icon: 'settings',
       iconPosition: 'right'
     }
   })
@@ -98,7 +98,7 @@ const expect = chai.expect
   const Constructor = Vue.extend(Button)
   const vm = new Constructor({
     propsData: {
-      icon: 'setting'
+      icon: 'settings'
     }
   })
   vm.$mount()
