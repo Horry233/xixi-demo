@@ -34,13 +34,18 @@
     }
   </style>
 
+  <style>
+    .box {
+      margin: 20px;
+    }
+  </style>
 
 
 </head>
 
 <body>
   <div id="app">
-    <div style="margin: 20px 0;">
+    <div class="box">
       <x-button :loading="loading1" @click="loading1 = !loading1">
         按钮
       </x-button>
@@ -56,7 +61,16 @@
         <x-button icon="right" icon-position="right">下一页</x-button>
       </x-button-group>
     </div>
-    <x-input></x-input>
+    <div class="box">
+      <x-input value="123"></x-input>
+      <x-input value="123" disabled></x-input>
+      <x-input value="123" readonly></x-input>
+    </div>
+    <div class="box">  
+      <x-input value="1" error="姓名不能少于两个字"></x-input>
+    </div>
+  
+
   </div>
 
   <script src="./src/app.js"></script>
