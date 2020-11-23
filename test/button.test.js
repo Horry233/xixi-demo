@@ -1,6 +1,12 @@
 const expect = chai.expect;
 import Vue from 'vue'
 import Button from '../src/button'
+/*
+  karma是一个测试运行器，自动打开测试
+  mocha是一个测试框架，提供describe和it 所以可以用BDD风格的代码写法
+  chai提供了expect断言
+  用travis ci 做持续集成(持续测试)
+*/
 
 Vue.config.productionTip = false
 Vue.config.devtools = false
