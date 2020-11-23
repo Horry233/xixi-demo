@@ -8,11 +8,12 @@
 import './svg'
 
 export default {
+  name: 'XiIcon',
   props: ['name']
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .x-icon {
       width: 1em;
       height: 1em;

@@ -13,6 +13,7 @@
 import Icon from './icon'
 
 export default {
+  name: 'XiButton',
   props: { // 从index传入
     icon: {}, 
     iconPosition: {
