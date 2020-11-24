@@ -40,6 +40,7 @@
     }
   </style>
 
+  
 
 </head>
 
@@ -66,15 +67,32 @@
       <x-input value="123" disabled></x-input>
       <x-input value="123" readonly></x-input>
     </div>
-    <div class="box">  
+    <div class="box">
       <x-input value="1" error="姓名不能少于两个字"></x-input>
     </div>
-    <div class="box">  
+    <div class="box">
       <x-input v-model="message"></x-input>
       <p>{{message}}</p>
       <button @click="message ++">+1</button>
     </div>
-  
+
+    <x-row>
+      <x-col span="2"></x-col>
+      <x-col span="22"></x-col>
+    </x-row>
+
+    <x-row>
+      <x-col></x-col>
+      <x-col></x-col>
+      <x-col></x-col>
+    </x-row>
+
+    <x-row>
+      <x-col></x-col>
+      <x-col></x-col>
+      <x-col></x-col>
+      <x-col></x-col>
+    </x-row>
 
   </div>
 
