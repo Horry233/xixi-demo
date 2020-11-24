@@ -70,7 +70,9 @@
       <x-input value="1" error="姓名不能少于两个字"></x-input>
     </div>
     <div class="box">  
-      <x-input value="1" @change="inputChange"></x-input>
+      <x-input v-model="message"></x-input>
+      <p>{{message}}</p>
+      <button @click="message ++">+1</button>
     </div>
   
 

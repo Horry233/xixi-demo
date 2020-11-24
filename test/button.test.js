@@ -6,6 +6,8 @@ import Button from '../src/button'
   mocha是一个测试框架，提供describe和it 所以可以用BDD风格的代码写法
   chai提供了expect断言
   用travis ci 做持续集成(持续测试)
+  sinon提供了 .fake
+  sinon-chai提供了 .calledWith
 */
 
 Vue.config.productionTip = false
