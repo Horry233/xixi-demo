@@ -1,6 +1,6 @@
 <template>
-  <div class="col" :class="[span && `col-${span}`,offset && `offset-${offset}`]"
-  :style="{paddingLeft: gutter/2 + 'px', paddingRight: gutter/2 + 'px'}">
+  <div class="col" :class="colClass"
+  :style="colStyle">
   <div style="border: 1px solid green;height: 100px">
     <slot></slot>
   </div>
@@ -21,6 +21,22 @@ export default {
   data() {
     return {
       gutter: 0
+    }
+  },
+  computed: {
+    /* 
+    因为gutter是从row传过来的，他是在mounted之后才会传过来，放在data里面的话是created的时候被读取，
+    读取之后便不会再改变，所以得不到正确的gutter
+    */
+    colStyle() { 
+      return {
+        paddingLeft: this.gutter/2 + 'px', 
+        paddingRight: this.gutter/2 + 'px'
+      }
+    },
+    colClass() {
+      let {span,offset} = this
+      return [span && `col-${span}`, offset && `offset-${offset}`]
     }
   }
 };
