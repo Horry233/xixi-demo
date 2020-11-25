@@ -54,11 +54,11 @@ export default {
       return [
         span && `col-${span}`,
         offset && `offset-${offset}`,
-          ... (phone && [`col-phone-${phone.span}`]),
-          ... (ipad && [`col-ipad-${ipad.span}`]),
-          ... (narrowPc && [`col-narrow-pc-${narrowPc.span}`]),
-          ... (pc && [`col-pc-${pc.span}`]),
-          ... (widePc && [`col-wide-pc-${widePc.span}`]),
+          ... (phone ? [`col-phone-${phone.span}`] : []),
+          ... (ipad ? [`col-ipad-${ipad.span}`] : []),
+          ... (narrowPc ? [`col-narrow-pc-${narrowPc.span}`] : []),
+          ... (pc ? [`col-pc-${pc.span}`] : []),
+          ... (widePc ? [`col-wide-pc-${widePc.span}`] : []),
       ]
     },
   },
@@ -69,7 +69,7 @@ export default {
 .col {
   height: 100px;
   // background-color: skyblue;
-  width: 50%;
+  // width: 50%;
   // border: 1px solid red;
 
   $class-prefix: col-;
