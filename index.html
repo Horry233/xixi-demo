@@ -14,6 +14,10 @@
       box-sizing: border-box;
     }
 
+    img {
+      max-width: 100%;
+    }
+
     html {
       --button-height: 32px;
       --font-size: 14px;
@@ -40,12 +44,11 @@
     }
   </style>
 
-  
-
 </head>
 
 <body>
   <div id="app">
+
     <div class="box">
       <x-button :loading="loading1" @click="loading1 = !loading1">
         按钮

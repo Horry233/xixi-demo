@@ -1,9 +1,9 @@
 <template>
   <div class="col" :class="colClass"
   :style="colStyle">
-  <div style="border: 1px solid green;height: 100px">
+  <!-- <div style="border: 1px solid green;height: 100px"> -->
     <slot></slot>
-  </div>
+  <!-- </div> -->
   </div>
 </template>
 
@@ -46,7 +46,7 @@ export default {
 .col {
   // height: 100px;
   // background-color: skyblue;  
-  width: 50%;
+  // width: 50%;
   // border: 1px solid red;
 
   $class-prefix: col-;
