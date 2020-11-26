@@ -36,6 +36,21 @@ export default {
       gutter: 0,
     };
   },
+  methods: {
+    createClasses(obj, str = "") {
+      if (!obj) {
+        return [];
+      }
+      let array = [];
+      if (obj.span) {
+        array.push(`col-${str}${obj.span}`);
+      }
+      if (obj.offset) {
+        array.push(`offset-${str}${obj.offset}`);
+      }
+      return array;
+    },
+  },
   computed: {
     /* 
     因为gutter是从row传过来的，他是在mounted之后才会传过来，放在data里面的话是created的时候被读取，
@@ -48,15 +63,15 @@ export default {
       };
     },
     colClass() {
-      let {span, offset , ipad, narrowPc, pc, widePc} = this
+      let { span, offset, ipad, narrowPc, pc, widePc } = this;
+      let createClasses = this.createClasses;
       return [
-        span && `col-${span}`,
-        offset && `offset-${offset}`,
-          ... (ipad ? [`col-ipad-${ipad.span}`] : []),
-          ... (narrowPc ? [`col-narrow-pc-${narrowPc.span}`] : []),
-          ... (pc ? [`col-pc-${pc.span}`] : []),
-          ... (widePc ? [`col-wide-pc-${widePc.span}`] : []),
-      ]
+        ...createClasses({ span, offset }),
+        ...createClasses(ipad, "ipad-"),
+        ...createClasses(narrowPc, "narrow-pc-"),
+        ...createClasses(pc, "pc-"),
+        ...createClasses(widePc, "wide-pc-"),
+      ];
     },
   },
 };
@@ -82,7 +97,7 @@ export default {
     }
   }
   //响应式
-  
+
   @media (min-width: 577px) and (max-width: 768px) {
     $class-prefix: col-ipad-;
     @for $n from 1 through 24 {
