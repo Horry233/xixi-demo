@@ -29,25 +29,33 @@
       --button-color-hover: #666;
     }
 
-    #app {
-      margin: 20px;
-    }
-
     body {
       font-size: var(--font-size);
     }
   </style>
 
+
   <style>
-    .box {
-      margin: 20px;
+    .demo {
+      background: #ddd;
+      border: 1px solid #666;
+      min-height: 100px;
     }
   </style>
-
 </head>
 
 <body>
   <div id="app">
+    <x-layout style="height: 100vh;">
+      <x-sider class="demo">sider</x-sider>
+      <x-layout>
+        <x-header class="demo">header</x-header>
+        <x-footer class="demo">footer</x-footer>
+        <x-content class="demo">content</x-content>
+      </x-layout>
+    </x-layout>
+
+
 
     <!-- <div class="box">
       <x-button :loading="loading1" @click="loading1 = !loading1">
@@ -120,7 +128,7 @@
       <x-col></x-col>
     </x-row>
   </div> -->
-  <x-row>
+    <!-- <x-row>
     <x-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}" :pc="{span:6}"></x-col>
     <x-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}" :pc="{span:6}"></x-col>
     <x-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}" :pc="{span:6}"></x-col>
@@ -128,7 +136,7 @@
     <x-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}" :pc="{span:6}"></x-col>
     <x-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}" :pc="{span:6}"></x-col>
 
-  </x-row>
+  </x-row> -->
 
   </div>
 
