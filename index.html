@@ -41,17 +41,30 @@
       border: 1px solid #666;
       min-height: 100px;
     }
+    .sider {
+      background-color: #333;
+      width: 200px;
+    }
+    .header {
+      background-color: #999;
+      height: 100px;
+    }
+    .footer {
+      background-color: #ccc;
+      height: 50px;
+    }
+
   </style>
 </head>
 
 <body>
   <div id="app">
     <x-layout style="height: 100vh;">
-      <x-sider class="demo">sider</x-sider>
+      <x-sider>sider</x-sider>
       <x-layout>
-        <x-header class="demo">header</x-header>
-        <x-footer class="demo">footer</x-footer>
-        <x-content class="demo">content</x-content>
+        <x-header>header</x-header>
+        <x-content>content</x-content>
+        <x-footer>footer</x-footer>
       </x-layout>
     </x-layout>
 
