@@ -33,124 +33,12 @@
       font-size: var(--font-size);
     }
   </style>
-
-
-  <style>
-    .demo {
-      background: #ddd;
-      border: 1px solid #666;
-      min-height: 100px;
-    }
-    .sider {
-      background-color: #333;
-      width: 200px;
-    }
-    .header {
-      background-color: #999;
-      height: 100px;
-    }
-    .footer {
-      background-color: #ccc;
-      height: 50px;
-    }
-
-  </style>
+  
 </head>
 
 <body>
   <div id="app">
-    <x-layout style="height: 100vh;">
-      <x-sider>sider</x-sider>
-      <x-layout>
-        <x-header>header</x-header>
-        <x-content>content</x-content>
-        <x-footer>footer</x-footer>
-      </x-layout>
-    </x-layout>
-
-
-
-    <!-- <div class="box">
-      <x-button :loading="loading1" @click="loading1 = !loading1">
-        按钮
-      </x-button>
-      <x-button icon="settings" :loading="loading2" @click="loading2 = !loading2">
-        按钮
-      </x-button>
-      <x-button icon="settings" icon-position="right" :loading="loading3" @click="loading3 = !loading3">
-        按钮
-      </x-button>
-      <x-button-group>
-        <x-button icon="left">上一页</x-button>
-        <x-button>更多</x-button>
-        <x-button icon="right" icon-position="right">下一页</x-button>
-      </x-button-group>
-    </div>
-    <div class="box">
-      <x-input value="123"></x-input>
-      <x-input value="123" disabled></x-input>
-      <x-input value="123" readonly></x-input>
-    </div>
-    <div class="box">
-      <x-input value="1" error="姓名不能少于两个字"></x-input>
-    </div>
-    <div class="box">
-      <x-input v-model="message"></x-input>
-      <p>{{message}}</p>
-      <button @click="message ++">+1</button>
-    </div>
-
-    <div style="border: 1px solid black;">
-
-    <x-row>
-      <x-col span="24"
-        :ipad="{span:8}"
-        :narrow-pc="{span:4}"
-        :pc="{span:2}"
-        :wide-pc="{span:1}"
-      >
-        1
-      </x-col>
-      <x-col span="24"
-        :ipad="{span:16}"
-        :narrow-pc="{span:20}"
-        :pc="{span:22}"
-        :wide-pc="{span:23}"
-      >11
-      </x-col>
-    </x-row>
-
-    <x-row gutter="20">
-      <x-col></x-col>
-      <x-col></x-col>
-      <x-col></x-col>
-    </x-row>
-
-    <x-row gutter="20">
-      <x-col></x-col>
-      <x-col></x-col>
-      <x-col></x-col>
-      <x-col></x-col>
-    </x-row>
-
-    <x-row gutter="20">
-      <x-col></x-col>
-      <x-col></x-col>
-      <x-col></x-col>
-      <x-col></x-col>
-      <x-col></x-col>
-    </x-row>
-  </div> -->
-    <!-- <x-row>
-    <x-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}" :pc="{span:6}"></x-col>
-    <x-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}" :pc="{span:6}"></x-col>
-    <x-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}" :pc="{span:6}"></x-col>
-    <x-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}" :pc="{span:6}"></x-col>
-    <x-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}" :pc="{span:6}"></x-col>
-    <x-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}" :pc="{span:6}"></x-col>
-
-  </x-row> -->
-
+    <x-button @click="showToast">show</x-button>
   </div>
 
   <script src="./src/app.js"></script>
