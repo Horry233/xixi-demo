@@ -38,22 +38,22 @@ new Vue({
     message: '123'
   },
   created() {
-    this.$toast('asasdasdasdd', {
-      enableHtml: false,
-      closeButton: {
-        text: '完成',
-        callback() {
-          console.log('已经完成')
-        }
-      },
-      autoClose: true,
-      // autoCloseDelay: 3,
-      position: 'middle'
-    })
+    
   },
   methods: {
     showToast() {
-      
+      this.$toast('asasdasdasdd', {
+        enableHtml: false,
+        closeButton: {
+          text: '完成',
+          callback() {
+            console.log('已经完成')
+          }
+        },
+        autoClose: true,
+        // autoCloseDelay: 3,
+        // position: 'middle'
+      })
     }
   }
 })
