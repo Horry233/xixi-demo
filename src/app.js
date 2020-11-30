@@ -38,10 +38,13 @@ new Vue({
     message: '123'
   },
   created() {
+    this.$toast('asasdasdasdd', {
+      enableHtml: false
+    })
   },
   methods: {
     showToast() {
-      this.$toast('我是message')
+      
     }
   }
 })
