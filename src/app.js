@@ -41,18 +41,30 @@ new Vue({
     
   },
   methods: {
-    showToast() {
-      this.$toast('asasdasdasdd', {
+    showToast1() {
+      this.$toast('Top', {
+        enableHtml: false,
+        closeButton: {
+          text: '完成'
+        }
+      })
+    },
+    showToast2() {
+      this.$toast('Middle', {
         enableHtml: false,
         closeButton: {
           text: '完成',
-          callback() {
-            console.log('已经完成')
-          }
         },
-        autoClose: true,
-        // autoCloseDelay: 3,
-        // position: 'middle'
+        position: 'middle'
+      })
+    },
+    showToast3() {
+      this.$toast('Bottom', {
+        enableHtml: false,
+        closeButton: {
+          text: '完成',
+        },
+        position: 'bottom'
       })
     }
   }
