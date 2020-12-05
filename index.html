@@ -38,10 +38,37 @@
 
 <body>
   <div id="app">
-    <x-button @click="showToast1">showTop</x-button>
-    <x-button @click="showToast2">showMiddle</x-button>
-    <x-button @click="showToast3">showBottom</x-button>
+    <x-tabs>
+      <!-- <x-tabs-head selected="selectedTab" @xxx="selectedTab = $event"> -->
+      <x-tabs-head :selected.sync="selectedTab" >
+        <template slot="actions">
+          <button>setting</button>
+        </template>
+        <x-tabs-item name="football">
+          足球
+        </x-tabs-item>
+        <x-tabs-item name="basketball" disabl ed>
+          <x-icon name="settings"></x-icon>篮球
+        </x-tabs-item>
+        <x-tabs-item name="tennis">
+          网球
+        </x-tabs-item>
+      </x-tabs-head>
 
+      <x-tabs-body>
+        <x-tabs-pane name="football">
+          足球相关
+        </x-tabs-pane>
+        <x-tabs-pane name="basketball">
+          篮球相关
+        </x-tabs-pane>
+        <x-tabs-pane name="tennis">
+          网球相关
+        </x-tabs-pane>
+      </x-tabs-body>
+    
+    
+    </x-tabs>
   </div>
   
   <script src="./src/app.js"></script>

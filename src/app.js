@@ -12,6 +12,11 @@ import Sider from './sider'
 import Footer from './footer'
 import Toast from './toast'
 import plugin from './plugin'
+import Tabs from './tabs'
+import TabsHead from './tabs-head'
+import TabsBody from './tabs-body'
+import TabsItem from './tabs-item'
+import TabsPane from './tabs-pane'
 
 
 Vue.component('x-button',Button)
@@ -26,16 +31,20 @@ Vue.component('x-content',Content)
 Vue.component('x-sider',Sider)
 Vue.component('x-footer',Footer)
 Vue.component('x-toast',Toast)
+Vue.component('x-tabs',Tabs)
+Vue.component('x-tabs-head',TabsHead)
+Vue.component('x-tabs-body',TabsBody)
+Vue.component('x-tabs-item',TabsItem)
+Vue.component('x-tabs-pane',TabsPane)
+
 Vue.use(plugin)
+
 
 
 new Vue({
   el: '#app',
   data: {
-    loading1: false,
-    loading2: true,
-    loading3: false,
-    message: '123'
+    selectedTab: 'football'
   },
   created() {
     
