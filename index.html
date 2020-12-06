@@ -38,9 +38,9 @@
 
 <body>
   <div id="app">
-    <x-tabs>
-      <!-- <x-tabs-head selected="selectedTab" @xxx="selectedTab = $event"> -->
-      <x-tabs-head :selected.sync="selectedTab" >
+    <x-tabs :selected.sync="selectedTab">
+      <!-- <x-tabs selected="selectedTab" @xxx="selectedTab = $event"> -->
+      <x-tabs-head >
         <template slot="actions">
           <button>setting</button>
         </template>

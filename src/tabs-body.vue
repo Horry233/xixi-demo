@@ -6,7 +6,9 @@
 
 <script>
 export default {
-  name: 'XiTabsBody'
+  name: 'XiTabsBody',
+  inject: ['eventBus']
+
 }
 </script>
 

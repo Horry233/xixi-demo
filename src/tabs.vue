@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import Vue from 'vue'
+
 export default {
   name: 'XiTabs',
   props: {
@@ -19,9 +21,20 @@ export default {
         return ['horizontal','vertical'].indexOf(value) >= 0
       }
     },
-    
+
+  },
+  data() {
+    return {
+      eventBus: new Vue() 
+    }
+  },
+  provide() {
+    return {
+      eventBus: this.eventBus
+    } 
   },
   created() {
+
     // this.$emit('update:selected','xxx')
   }
 }
