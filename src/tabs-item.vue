@@ -1,5 +1,5 @@
 <template>
-  <div class="tabs-item" @click="xxx" :class="classes">
+  <div class="tabs-item" @click="onClick" :class="classes">
     <slot></slot>
   </div>
 </template>
@@ -31,12 +31,16 @@ export default {
   computed: {
     classes() {
       return {
-        active: this.active
+        active: this.active,
+        disabled: this.disabled
       }
     }
   },
   methods: {
-    xxx() {
+    onClick() {
+      if(this.disabled) {
+        return
+      }
       this.eventBus.$emit('update:selected', this.name,this)
     }
   }
@@ -44,9 +48,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$blue: blue;
+$blue: rgb(67, 137, 218); 
+$disabled-text-color: grey; 
 .tabs-item {
-  // flex-grow: 1;
   flex-shrink: 0;
   padding: 0 1em;
   cursor: pointer;
@@ -55,6 +59,9 @@ $blue: blue;
   align-items: center;
   &.active {
     color: $blue;
+  }
+  &.disabled {
+    color: $disabled-text-color;
   }
 }
 
