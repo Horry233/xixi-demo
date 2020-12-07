@@ -37,36 +37,23 @@
 </head>
 
 <body>
-  <div id="app">
-    <!-- <x-tabs selected="selectedTab" @xxx="selectedTab = $event"> -->
-    <x-tabs :selected.sync="selectedTab">
-      <x-tabs-head >
-        <template slot="actions">
-          <button>setting</button>
-        </template>
-        <x-tabs-item name="football">
-          足球
-        </x-tabs-item>
-        <x-tabs-item name="basketball" disabled>
-          <x-icon name="settings"></x-icon>篮球
-        </x-tabs-item>
-        <x-tabs-item name="tennis">
-          网球
-        </x-tabs-item>
-      </x-tabs-head>
+  <div id="app" style="padding-top:100px; padding-left: 100px ">
+   <x-popover>
+    <template slot="content">
+      <div>popover内容</div>
+    </template>
+    <button>点击</button>
+   </x-popover>
 
-      <x-tabs-body>
-        <x-tabs-pane name="football">
-          足球相关
-        </x-tabs-pane>
-        <x-tabs-pane name="basketball">
-          篮球相关
-        </x-tabs-pane>
-        <x-tabs-pane name="tennis">
-          网球相关
-        </x-tabs-pane>
-      </x-tabs-body>
-    </x-tabs>
+   <x-popover>
+    <template slot="content">
+      <div>popover内容</div>
+    </template>
+    <button>点击</button>
+   </x-popover>
+
+
+
   </div>
   
   <script src="./src/app.js"></script>
