@@ -34,6 +34,10 @@ export default {
     } 
   },
   mounted() {
+    if(this.$children.length === 0) { // $children 指的是子组件，不是子元素
+      console && console.warn &&
+      console.warn('tabs的子组件只能是tabs-head 或者tabs-body')
+    }
     // this.eventBus.$emit('update:selected',this.selected)
     this.$children.forEach((vm) => {
       if(vm.$options.name === 'XiTabsHead') {
