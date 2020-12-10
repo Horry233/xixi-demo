@@ -37,35 +37,66 @@
 </head>
 
 <body>
-  <div id="app" style="padding-top:100px; padding-left: 100px; border: 1px solid black;">
-   <x-popover position="bottom">
-    <template slot="content">
-      <div>asdasdasdasdas321das321dasdas6d54as645das</div>
-    </template>
-    <x-button>点击</x-button>
-   </x-popover>
-
-   <x-popover>
-    <template slot="content">
-      <div>popover内容</div>
-    </template>
-    <x-button>点击</x-button>
-   </x-popover>
-
-   <x-popover position="left">
-    <template slot="content">
-      <div>popover内容</div>
-    </template>
-    <x-button>点击</x-button>
-   </x-popover>
-
-   <x-popover position="right">
-    <template slot="content">
-      <div>popover内容</div>
-    </template>
-    <x-button>点击</x-button>
-   </x-popover>
-
+  <div id="app" style="padding-top:100px; padding-left: 100px; ">
+   <div style="padding-bottom:50px;">
+    <x-popover position="bottom" trigger="hover">
+      <template slot="content">
+        <div>asdasdasdasdas321das321dasdas6d54as645das</div>
+      </template>
+      <x-button>点击</x-button>
+     </x-popover>
+  
+     <x-popover trigger="hover">
+      <template slot="content">
+        <div>popover内容</div>
+      </template>
+      <x-button>点击</x-button>
+     </x-popover>
+  
+     <x-popover position="left" trigger="hover">
+      <template slot="content">
+        <div>popover内容</div>
+      </template>
+      <x-button>点击</x-button>
+     </x-popover>
+  
+     <x-popover position="right" trigger="hover">
+      <template slot="content">
+        <div>popover内容</div>
+      </template>
+      <x-button>点击</x-button>
+     </x-popover>
+   </div>
+   
+   <div>
+    <x-popover position="bottom">
+      <template slot="content">
+        <div>asdasdasdasdas321das321dasdas6d54as645das</div>
+      </template>
+      <x-button>点击</x-button>
+     </x-popover>
+  
+     <x-popover>
+      <template slot="content">
+        <div>popover内容</div>
+      </template>
+      <x-button>点击</x-button>
+     </x-popover>
+  
+     <x-popover position="left">
+      <template slot="content">
+        <div>popover内容</div>
+      </template>
+      <x-button>点击</x-button>
+     </x-popover>
+  
+     <x-popover position="right">
+      <template slot="content">
+        <div>popover内容</div>
+      </template>
+      <x-button>点击</x-button>
+     </x-popover>
+   </div>
 
   </div>
   
