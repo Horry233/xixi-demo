@@ -38,7 +38,7 @@
 
 <body>
   <div id="app" style="padding-top:100px; padding-left: 100px; border: 1px solid black;">
-   <x-popover>
+   <x-popover position="bottom">
     <template slot="content">
       <div>asdasdasdasdas321das321dasdas6d54as645das</div>
     </template>
@@ -52,6 +52,19 @@
     <x-button>点击</x-button>
    </x-popover>
 
+   <x-popover position="left">
+    <template slot="content">
+      <div>popover内容</div>
+    </template>
+    <x-button>点击</x-button>
+   </x-popover>
+
+   <x-popover position="right">
+    <template slot="content">
+      <div>popover内容</div>
+    </template>
+    <x-button>点击</x-button>
+   </x-popover>
 
 
   </div>
