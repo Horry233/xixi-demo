@@ -5,9 +5,28 @@
 </template>
 
 <script>
+import Vue from 'vue'
 export default {
   name: "XiCollapse",
-  
+  data() {
+    return {
+      eventBus: new Vue()
+    }
+  },
+  props: {
+    accordion: {
+      type: Boolean,
+      default: false
+    }
+  },
+  provide() {
+    if(this.accordion) {
+      return {
+        eventBus: this.eventBus
+      }
+    }
+  }
+
 }
 </script>
 

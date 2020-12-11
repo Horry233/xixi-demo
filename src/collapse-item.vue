@@ -1,5 +1,5 @@
 <template>
-  <div class="collapse-item" @click="open = !open">
+  <div class="collapse-item" @click="toggle">
     <div class="title">
       {{title}}
     </div>
@@ -23,10 +23,28 @@ export default {
       required:  true
     }
   },
+  inject: ['eventBus'],
   methods: {
-
-
+    toggle() {
+      if(this.open) {
+        this.open = false
+      }else {
+        this.open = true
+        this.eventBus && this.eventBus.$emit('update:selected', this)
+      }
+    },
+    close() {
+      this.open = false
+    }
+  },
+  mounted() {
+    this.eventBus && this.eventBus.$on('update:selected', (vm)=> {
+      if(vm !== this) {
+        this.close()
+      }
+    })
   }
+  
 }
 </script>
 
@@ -38,7 +56,7 @@ $border-radius: 4px;
     border: 1px solid $grey;
     margin: -1px -1px 0px -1px;
     min-height: 32px;
-    display: flex;
+    display: flex;     
     align-items: center;
     padding: 0 8px;
   }
