@@ -37,70 +37,12 @@
 </head>
 
 <body>
-  <div id="app" style="padding-top:100px; padding-left: 100px; ">
-   <div style="padding-bottom:50px;">
-    <x-popover position="bottom" trigger="hover">
-      <template slot="content">
-        <div>asdasdasdasdas321das321dasdas6d54as645das</div>
-      </template>
-      <x-button>点击</x-button>
-     </x-popover>
-  
-     <x-popover trigger="hover">
-      <template slot="content">
-        <div>popover内容</div>
-      </template>
-      <x-button>点击</x-button>
-     </x-popover>
-  
-     <x-popover position="left" trigger="hover">
-      <template slot="content">
-        <div>popover内容</div>
-      </template>
-      <x-button>点击</x-button>
-     </x-popover>
-  
-     <x-popover position="right" trigger="hover">
-      <template slot="content">
-        <div>popover内容</div>
-      </template>
-      <x-button>点击</x-button>
-     </x-popover>
-   </div>
-
-   <div>
-    <x-popover position="bottom">
-      <template slot="content">
-        <div>asdasdasdasdas321das321dasdas6d54as645das</div>
-      </template>
-      <x-button>点击</x-button>
-     </x-popover>
-  
-     <x-popover>
-      <template slot="content" slot-scope="{close}">
-        <div>
-          popover内容<x-button @click="close">关闭</x-button>
-        </div>
-      </template>
-      <x-button>点击</x-button>
-     </x-popover>
-  
-     <x-popover position="left">
-      <template slot="content">
-        <div>
-          popover内容<x-button>关闭</x-button>
-        </div>
-      </template>
-      <x-button>点击</x-button>
-     </x-popover>
-  
-     <x-popover position="right">
-      <template slot="content">
-        <div>popover内容</div>
-      </template>
-      <x-button>点击</x-button>
-     </x-popover>
-   </div>
+  <div id="app" style="padding:100px;">
+    <x-collapse>
+      <x-collapse-item title="标题1">内容1</x-collapse-item>
+      <x-collapse-item title="标题2">内容2</x-collapse-item>
+      <x-collapse-item title="标题3">内容3</x-collapse-item>
+    </x-collapse>
 
   </div>
   
