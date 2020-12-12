@@ -17,14 +17,20 @@ export default {
     accordion: {
       type: Boolean,
       default: false
+    },
+    selected: {
+      type: String  
     }
   },
   provide() {
-    if(this.accordion) {
+    // if(this.accordion) {
       return {
         eventBus: this.eventBus
       }
-    }
+    // }
+  },
+  mounted() {
+    this.eventBus.$emit('update:selected', this.selected)
   }
 
 }
