@@ -3,6 +3,11 @@ module.exports = {
   title: '西西UI',
   description: '一个好用的UI框架',
   themeConfig: {
+    nav: [
+      {text: '主页', link: '/'},
+      {text: '文档', link: '/get-started/'},
+      {text: 'Github', link: 'https://github.com/Horry233/xixi-demo'},
+    ],
     sidebar: [
       {
         title: '入门',
@@ -14,9 +19,10 @@ module.exports = {
       },
       {
         title: '组件',
-        // collapsable: false,
+        collapsable: false,
         children: [
           '/components/button',
+          '/components/collapse',
           '/components/grid',
           '/components/input',
           '/components/layout',

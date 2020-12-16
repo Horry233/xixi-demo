@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper" :class="toastClasses">
+  <div class="wrapper x-toast" :class="toastClasses">
     <div class="toast" ref="toast">
       <div class="message">
         <slot v-if="!enableHtml"></slot>
@@ -7,9 +7,9 @@
       </div>
 
       <div class="line" ref="line"></div>
-      <span class="close" v-if="closeButton" @click="onClickClose">{{
-        closeButton.text
-      }}</span>
+      <span class="close" v-if="closeButton" @click="onClickClose">
+        {{closeButton.text}}
+      </span>
     </div>
   </div>
 </template>
@@ -167,6 +167,7 @@ $toast-bg: rgba(0, 0, 0, 0.75);
   .close {
     padding-left: 16px;
     flex-shrink: 0;
+    cursor: pointer;
   }
   .line {
     height: 100%;

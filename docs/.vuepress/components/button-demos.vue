@@ -1,15 +1,9 @@
 <template>
-  <div>
+  <div class="wrapper">
     <x-button>默认按钮</x-button>
     <x-button icon="settings">默认按钮</x-button>
-    <x-button :loading="true">默认按钮</x-button>
+    <x-button :loading=loading  @click="loading=!loading">默认按钮</x-button>
     <x-button disabled>默认按钮</x-button>
-
-    <pre>
-      <code>
-        {{content}}
-      </code>
-    </pre>
   </div>
 
 </template>
@@ -22,18 +16,14 @@ export default {
   },
   data() {
     return {
-      content: `
-      <x-button>默认按钮</x-button>
-      <x-button icon="settings">默认按钮</x-button>
-      <x-button :loading="true">默认按钮</x-button>
-      <x-button disabled>默认按钮</x-button>
-      `
+      loading: true
     }
-    
   }
 }
 </script>
 
 <style>
-
+.wrapper {
+  margin-top: 10px;
+}
 </style>

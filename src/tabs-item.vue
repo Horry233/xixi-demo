@@ -53,6 +53,7 @@ export default {
 
 <style lang="scss" scoped>
 $blue: rgb(67, 137, 218); 
+$green: #01988F;
 $disabled-text-color: grey; 
 .tabs-item {
   flex-shrink: 0;
@@ -62,7 +63,7 @@ $disabled-text-color: grey;
   display: flex;
   align-items: center;
   &.active {
-    color: $blue;
+    color: $green;
   }
   &.disabled {
     color: $disabled-text-color;

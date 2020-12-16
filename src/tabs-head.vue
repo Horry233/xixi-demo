@@ -16,7 +16,8 @@ export default {
     this.eventBus.$on('update:selected', (item,vm)=> {
       let {width,height,top,left} = vm.$el.getBoundingClientRect()
       this.$refs.line.style.width = `${width}px`
-      this.$refs.line.style.left = `${left}px`
+      // this.$refs.line.style.left = `${left}px`
+      this.$refs.line.style.left = `${vm.$el.offsetLeft}px`
       
     })
   }
@@ -25,7 +26,8 @@ export default {
 
 <style lang="scss" scoped>
 $tabs-height: 40px;
-$blue: rgb(67, 137, 218);
+$green: rgb(67, 137, 218);
+$green: #01988F;
 $border-color: #ddd;
 .tabs-head {
   position: relative;
@@ -37,7 +39,7 @@ $border-color: #ddd;
   > .line {
     position: absolute;
     bottom: 0;
-    border-bottom: 2px solid $blue;
+    border-bottom: 2px solid $green;
     transition: all 0.2s linear;
   }
   > .actions-wrapper {
