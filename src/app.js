@@ -20,6 +20,7 @@ import TabsPane from './tabs-pane'
 import Popover from './popover'
 import Collapse from './collapse'
 import CollapseItem from './collapse-item'
+import Cascader from './cascader'
 
 
 Vue.component('x-button',Button)
@@ -42,6 +43,7 @@ Vue.component('x-tabs-pane',TabsPane)
 Vue.component('x-popover',Popover)
 Vue.component('x-collapse',Collapse)
 Vue.component('x-collapse-item',CollapseItem)
+Vue.component('x-cascader',Cascader)
 
 
 Vue.use(plugin)
@@ -51,38 +53,44 @@ Vue.use(plugin)
 new Vue({
   el: '#app',
   data: {
-    selectedTab: ["3"]
+    source: [{
+      name: '浙江',
+      children: [
+        {
+          name: '杭州',
+          children: [
+            {name: '上城'},
+            {name: '下城'},
+            {name: '江干'},
+          ]
+        },
+        {
+          name: '嘉兴',
+          children: [
+            {name: '南湖'},
+            {name: '秀洲'},
+            {name: '嘉善'},
+          ]
+        },
+      ]
+    }, {
+      name: '福建',
+      children: [
+        {
+          name: '福州',
+          children: [
+            {name: '鼓楼'},
+            {name: '台江'},
+            {name: '仓山'},
+          ]
+        },
+      ]
+    }]
   },
   created() {
     
   },
   methods: {
-    showToast1() {
-      this.$toast('Top', {
-        enableHtml: false,
-        closeButton: {
-          text: '完成'
-        }
-      })
-    },
-    showToast2() {
-      this.$toast('Middle', {
-        enableHtml: false,
-        closeButton: {
-          text: '完成',
-        },
-        position: 'middle'
-      })
-    },
-    showToast3() {
-      this.$toast('Bottom', {
-        enableHtml: false,
-        closeButton: {
-          text: '完成',
-        },
-        position: 'bottom'
-      })
-    }
   }
 })
 
