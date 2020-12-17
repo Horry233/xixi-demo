@@ -4,7 +4,7 @@
 ## 介绍
 我在学习Vue的过程中做的一个UI框架，希望对你有帮助
 
-目前已经有 按钮(Button)、输入框(Input)、网格(Grid)、布局(Layout)、提示(Toast)、标签页(Tabs)、弹出框(Popover)、折叠面板(Collapse) 8个组件
+目前已经有 按钮(Button)、折叠面板(Collapse)、网格(Grid)、输入框(Input)、布局(Layout)、弹出框(Popover)、标签页(Tabs)、提示(Toast) 8个组件
 
 ## 开始使用
 
