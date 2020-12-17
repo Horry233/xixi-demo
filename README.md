@@ -1,8 +1,10 @@
-# xix-ui 一个基于Vue的UI组件
+# xix-ui 一个基于Vue的UI组件库
 [![Build Status](https://www.travis-ci.org/Horry233/xixi-demo.svg?branch=main)](https://www.travis-ci.org/Horry233/xixi-demo)
 
 ## 介绍
 我在学习Vue的过程中做的一个UI框架，希望对你有帮助
+
+目前已经有 按钮(Button)、输入框(Input)、网格(Grid)、布局(Layout)、提示(Toast)、标签页(Tabs)、弹出框(Popover)、折叠面板(Collapse) 8个组件
 
 ## 开始使用
 
@@ -12,20 +14,7 @@
 *, *::before, *::after {box-sizing: border-box}
 ```
 IE 8 及以上浏览器支持此样式
-你还需要设置默认颜色(后续会改为 SCSS变量)
-```
-html {
-      --button-height: 32px;
-      --font-size: 14px;
-      --button-bg: white;
-      --button-active-bg: #eee;
-      --border-radius: 4px;
-      --color: #999;
-      --border-color: #999;
-      --button-color-hover: #666;
-    }
-```
-IE 15 及以上浏览器支持此样式
+
 
 2. 安装xix-ui
 ```
@@ -49,11 +38,4 @@ export default {
 
 
 ## 文档
-
-## 提问
-
-## 变更记录
-
-## 联系方式
-
-## 贡献代码
+[前往文档](https://horry233.github.io/xixi-demo/)

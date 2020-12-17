@@ -1,7 +1,7 @@
 ---
-title: Popover - 弹出层
+title: Popover - 弹出框
 ---
-# 弹出层
+# 弹出框
 
 **使用方法**
 
