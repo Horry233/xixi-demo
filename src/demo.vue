@@ -1,8 +1,8 @@
 <template>
   <div style="margin:100px">
-    <x-button>123</x-button>
     <p>11111</p>
-    <x-cascader :source="source" popover-height="200px"></x-cascader>
+    <x-cascader :source="source" popover-height="200px"
+      :selected="selected" @update:selected="selected = $event"></x-cascader>
     <p>22222</p>
   </div>
 </template>
@@ -17,6 +17,7 @@
     },
     data () {
       return {
+        selected: [],
         source: [
           {
             name: "浙江",
