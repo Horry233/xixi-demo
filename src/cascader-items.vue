@@ -66,7 +66,7 @@
     justify-content: flex-start;
     height: 100px;
     .left {
- 
+      overflow: auto;
       height: 100%;
       padding: .3em 0;
     }
