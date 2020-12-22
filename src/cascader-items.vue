@@ -2,8 +2,10 @@
   <div class="cascaderItem" :style="{height: height}">
     <div class="left" ref="left">
       <div class="label" v-for="item in items" @click="onClickLabel(item)" :key="item.name">
-        {{item.name}}
-        <icon class="icon" v-if="item.children" name="right"></icon>
+        <span class="name">
+          {{item.name}}
+        </span>
+        <icon class="icon" v-if="rightArrowVisbile(item)" name="right"></icon>
       </div>
     </div>
     <div class="right" v-if="rightItems">
@@ -32,6 +34,9 @@
       level: {
         type: Number,
         default: 0
+      },
+      loadData: {
+        type: Function
       }
     },
     computed: {
@@ -44,9 +49,13 @@
             return selected[0].children
           }
         }
-      }
+      },
     },
     methods: {
+      rightArrowVisbile(item) {
+        return this.loadData ? !item.isLeaf : item.children
+        //如果是动态数据就判断是否是叶子节点，静态就判断是否有children
+      },
       onClickLabel(item) {
         let copy = JSON.parse(JSON.stringify(this.selected))
         copy[this.level] = item
@@ -56,7 +65,7 @@
       onUpdateSelected(newSelected) {
         this.$emit('update:selected', newSelected)
       }
-    },
+    }
   }
 </script>
 
@@ -77,11 +86,19 @@
       border-left: 1px solid $border-color-light;
     }
     .label {
-      padding: .3em 1em;
+      padding: .5em 1em;
       display: flex;
       align-items: center;
+      cursor: pointer;
+      &:hover {
+        background-color: $grey;
+      }
+      > .name {
+        margin-right: 1em;
+        user-select: none;
+      }
       .icon {
-        margin-left: 1em;
+        margin-left: auto;
         transform: scale(0.5);
       }
     }
