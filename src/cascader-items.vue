@@ -35,12 +35,14 @@
       }
     },
     computed: {
+      // 计算属性依赖不改变，不会更新 
       rightItems () {
-        let currentSelected = this.selected[this.level]
-        if (currentSelected && currentSelected.children) {
-          return currentSelected.children
-        } else {
-          return null
+        if(this.selected[this.level]) {
+          let selected = this.items.filter((item) => item.name === this.selected[this.level].name) 
+          //filter 返回值是一个数组
+          if (selected && selected[0].children && selected[0].children.length > 0) {
+            return selected[0].children
+          }
         }
       }
     },

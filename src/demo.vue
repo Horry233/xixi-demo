@@ -10,6 +10,9 @@
       @update:selected="onUpdateSelected"
       :selected.sync="selected" :load-data="loadData"></x-cascader>
     </div>
+    <div>
+       {{source}}
+    </div>
 
   </div>
 </template>
@@ -54,6 +57,7 @@
         ajax(this.selected[0].id).then(result => {
           let lastLevelSelected = this.source.filter(item => item.id === this.selected[0].id)[0]
           this.$set(lastLevelSelected, 'children', result)
+          console.log(1);
         })
       },
       onUpdateSource () {
