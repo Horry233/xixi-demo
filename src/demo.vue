@@ -6,15 +6,8 @@
         @update:selected="onUpdateSelected"
         :selected.sync="selected" :load-data="loadData"></x-cascader>
     </div>
-
-    <div style="margin:100px">
-      <x-cascader :source.sync="source" popover-height="200px"
-      @update:source="onUpdateSource"
-      @update:selected="onUpdateSelected"
-      :selected.sync="selected" :load-data="loadData"></x-cascader>
-    </div>
     <div>
-       {{source}}
+       {{selected.map((item)=> item.name)}}
     </div>
 
   </div>

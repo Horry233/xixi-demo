@@ -5,11 +5,20 @@
         <span class="name">
           {{item.name}}
         </span>
-        <icon class="icon" v-if="rightArrowVisbile(item)" name="right"></icon>
+
+        <span class="icons">
+          <template v-if="item.name === loadingItem.name">
+            <icon class="loading" name="loading"></icon>
+          </template>
+          <template v-else>
+            <icon class="next" v-if="rightArrowVisible(item)" name="right"></icon>
+          </template>
+        </span>
       </div>
     </div>
     <div class="right" v-if="rightItems">
-      <cascader-items :items="rightItems" :height="height" :level="level+1" 
+      <cascader-items :items="rightItems" :height="height" :level="level+1"
+      :loading-item="loadingItem" :load-data="loadData" 
       :selected="selected" @update:selected="onUpdateSelected"></cascader-items>
     </div>
   </div>
@@ -37,7 +46,11 @@
       },
       loadData: {
         type: Function
-      }
+      },
+       loadingItem: {
+        type: Object,
+        default: () => ({})
+      },
     },
     computed: {
       // 计算属性依赖不改变，不会更新 
@@ -52,7 +65,7 @@
       },
     },
     methods: {
-      rightArrowVisbile(item) {
+      rightArrowVisible(item) {
         return this.loadData ? !item.isLeaf : item.children
         //如果是动态数据就判断是否是叶子节点，静态就判断是否有children
       },
@@ -98,9 +111,14 @@
         margin-right: 1em;
         user-select: none;
       }
-      .icon {
+      .icons {
         margin-left: auto;
+        .next {
         transform: scale(0.5);
+        }
+        .loading {
+          animation: spin 2s infinite linear;
+        }
       }
     }
   }
