@@ -89,6 +89,7 @@
       padding: .5em 1em;
       display: flex;
       align-items: center;
+      white-space: nowrap;
       cursor: pointer;
       &:hover {
         background-color: $grey;
