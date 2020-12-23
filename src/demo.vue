@@ -1,8 +1,11 @@
 <template>
   <div style="margin:20px">
-    <p>{{selected &&selected[0] &&selected[0].name || '空'}}</p>
-    <p>{{selected &&selected[1] &&selected[1].name || '空'}}</p>
-    <p>{{selected &&selected[2] &&selected[2].name || '空'}}</p>
+    <div style="padding: 20px;">
+      <x-cascader :source.sync="source" popover-height="200px"
+        @update:source="onUpdateSource"
+        @update:selected="onUpdateSelected"
+        :selected.sync="selected" :load-data="loadData"></x-cascader>
+    </div>
 
     <div style="margin:100px">
       <x-cascader :source.sync="source" popover-height="200px"
