@@ -14,13 +14,13 @@ title: Toast - 消息弹出框
 </ClientOnly>
 
 #### 示例代码
-
+::: details 点击查看源码
 ```vue
   <x-button @click="$toast('点击弹出提示')">上方弹出</x-button>
   <x-button @click="$toast('点击弹出提示', {position:'middle'})">中间弹出</x-button>
   <x-button @click="$toast('点击弹出提示', {position:'bottom'})">下方弹出</x-button>
 ```
-
+:::
 ### 设置关闭按钮
 
 #### 预览
@@ -30,7 +30,7 @@ title: Toast - 消息弹出框
 </ClientOnly>
 
 #### 示例代码
-
+::: details 点击查看源码
 ```vue
 <template>
     <div>
@@ -54,7 +54,7 @@ methods: {
 }
 </script>
 ```
-
+:::
 ### 支持传入 HTML
 
 #### 预览
@@ -64,7 +64,7 @@ methods: {
 </ClientOnly>
 
 #### 示例代码
-
+::: details 点击查看源码
 ```vue
 <template>
     <div>
@@ -83,7 +83,7 @@ export default {
 }
 </script>
 ```
-
+:::
 # options
 |参数| 说明 |  类型  | 可选值 | 默认值 |
 | :-------------: |:-------------:| :-----:|:-----:|:-----:|

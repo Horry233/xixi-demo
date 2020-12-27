@@ -12,14 +12,14 @@ title: Button 按钮
 </ClientOnly>
 
 #### 示例代码：
-
+::: details 点击查看源码
 ```vue
 <x-button>默认按钮</x-button>
 <x-button icon="settings">默认按钮</x-button>
 <x-button :loading=loading  @click="loading=!loading">默认按钮</x-button>
 <x-button disabled>默认按钮</x-button>
 ```
-
+:::
 # Attributes
 |参数| 说明 |  类型  | 可选值 | 默认值 |
 | :-------------: |:-------------:| :-----:|:-----:|:-----:|

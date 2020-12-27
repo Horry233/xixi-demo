@@ -14,7 +14,7 @@ title: Layout - 布局
 </ClientOnly>
 
 #### 示例代码
-
+::: details 点击查看源码
 ```vue
 <x-layout style="color: white; margin-bottom:50px;">
   <x-header style="height: 50px; background:#01988F;">
@@ -28,7 +28,7 @@ title: Layout - 布局
   </x-footer>
 </x-layout>
 ```
-
+:::
 ### 布局二
 
 #### 预览
@@ -38,7 +38,7 @@ title: Layout - 布局
 </ClientOnly>
 
 #### 示例代码
-
+::: details 点击查看源码
 ```vue
 <x-layout style="color: white; overflow:hidden; margin-bottom:50px;">
   <x-header style="height: 50px; background:#01988F;">
@@ -57,7 +57,7 @@ title: Layout - 布局
   </x-footer>
 </x-layout>
 ```
-
+:::
 ### 布局三
 
 #### 预览
@@ -67,7 +67,7 @@ title: Layout - 布局
 </ClientOnly>
 
 #### 示例代码
-
+::: details 点击查看源码
 ```vue
 <x-layout style="color: white; overflow:hidden; margin-bottom:50px;">
   <x-sider style=" background:#00946C; width:200px;">
@@ -86,3 +86,4 @@ title: Layout - 布局
   </x-layout>
 </x-layout>
 ```
+:::

@@ -14,7 +14,7 @@ title: Grid - 网格
 </ClientOnly>
 
 #### 示例代码 
-
+::: details 点击查看源码
 ```vue
 <x-row class="demoRow">
   <x-col span="8">
@@ -100,7 +100,7 @@ title: Grid - 网格
   </x-col>
 </x-row>
 ```
-
+:::
 ### 设置 gutter
 
 #### 预览
@@ -110,7 +110,7 @@ title: Grid - 网格
 </ClientOnly>
 
 #### 示例代码
-
+::: details 点击查看源码
 ```vue
 <x-row class="demoRow" gutter="10">
   <x-col span="8">
@@ -138,7 +138,7 @@ title: Grid - 网格
   </x-col>
 </x-row>
 ```
-
+:::
 ### 设置空隙
 
 #### 预览
@@ -148,7 +148,7 @@ title: Grid - 网格
 </ClientOnly>
 
 #### 示例代码
-
+::: details 点击查看源码
 ```vue
 <x-row class="demoRow" gutter="10">
   <x-col span="8">
@@ -204,7 +204,7 @@ title: Grid - 网格
   </x-col>
 </x-row>
 ```
-
+:::
 # Attributes
 
 ### Row 

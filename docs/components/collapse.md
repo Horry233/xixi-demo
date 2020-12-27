@@ -12,7 +12,7 @@ title: Collapse - 折叠面板
 </ClientOnly>
 
 #### 示例代码
-
+::: details 点击查看源码
 ```vue
 <x-collapse :selected.sync="selectedTab" accordion>
   <x-collapse-item title="少而好学" name="1">如日出之阳</x-collapse-item>
@@ -30,7 +30,7 @@ export default {
 }
 </script>
 ```
-
+:::
 # Attributes
 
 ### Collapse 

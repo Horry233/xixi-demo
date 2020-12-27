@@ -14,7 +14,7 @@ title: Popover - 弹出框
 </ClientOnly>
 
 #### 示例代码
-
+::: details 点击查看源码
 ```vue
 <x-popover position="left">
   <x-button>左边弹出</x-button>
@@ -41,7 +41,7 @@ title: Popover - 弹出框
   </template>
 </x-popover>
 ```
-
+:::
 ### 支持 hover 触发
 
 #### 预览
@@ -51,7 +51,7 @@ title: Popover - 弹出框
 </ClientOnly>
 
 #### 示例代码
-
+::: details 点击查看源码
 ```vue
 <x-popover position="left" trigger="hover">
   <x-button>左边弹出</x-button>
@@ -78,7 +78,7 @@ title: Popover - 弹出框
   </template>
 </x-popover>
 ```
-
+:::
 # Attributes
 |参数| 说明 |  类型  | 可选值 | 默认值 |
 | :-------------: |:-------------:| :-----:|:-----:|:-----:|

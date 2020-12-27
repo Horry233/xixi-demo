@@ -12,7 +12,7 @@ title: Tabs - 标签
 </ClientOnly>
 
 #### 示例代码
-
+::: details 点击查看源码
 ```vue
 <x-tabs :selected="selected">
   <x-tabs-head>
@@ -39,7 +39,7 @@ export default {
 }
 </script>
 ```
-
+:::
 # Attributes
 
 ### Tabs

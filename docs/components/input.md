@@ -14,7 +14,7 @@ title: Input - 输入框
 <br>
 
 #### 示例代码：
-
+::: details 点击查看源码
 ```vue
 <x-input placeholder="请输入内容"></x-input>
 <x-input value="默认内容"></x-input>
@@ -25,7 +25,7 @@ title: Input - 输入框
 <x-input v-model="value"></x-input>
 <p>value: {{value}}</p>
 ```
-
+:::
 # Attributes
 |参数| 说明 |  类型  | 可选值 | 默认值 |
 | :-------------: |:-------------:| :-----:|:-----:|:-----:|
