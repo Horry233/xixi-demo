@@ -1,83 +1,48 @@
 <template>
-  <div style="margin:20px">
-    <div style="padding: 20px;">
-      <x-cascader :source.sync="source" popover-height="200px"
-        @update:source="onUpdateSource"
-        @update:selected="onUpdateSelected"
-        :selected.sync="selected" :load-data="loadData"></x-cascader>
-    </div>
-    <div>
-       {{selected.map((item)=> item.name)}}
-    </div>
-
+  <div>
+    <x-slides class="wrapper" width="300px" height="200px" :selected.sync="selected">
+      <x-slides-item name="1">
+        <div class="box">1</div>
+      </x-slides-item>
+      <x-slides-item name="2">
+        <div class="box">2</div>
+      </x-slides-item>
+      <x-slides-item name="3">
+        <div class="box">3</div>
+      </x-slides-item>
+    </x-slides>
   </div>
 </template>
 <script>
-  import Button from "./button";
-  import Cascader from "./cascader";
-  import db from './db'
-  
-  function ajax (parentId = 0) {
-      return new Promise((success, fail) => {
-      setTimeout(() => {
-        let result = db.filter((item) => item.parent_id == parentId)
-        
-        result.forEach(node => {
-          if(db.filter(item => item.parent_id === node.id).length > 0) {
-            node.isLeaf = false
-          }else {
-            node.isLeaf = true
-          }
-        })
-        success(result)
-      }, 300)
-    })
-  }
+import Slides from "./slides"
+import SlidesItem from "./slides-item"
 
-  export default {
-    name: "demo",
-    components: {
-      "x-button": Button,
-      "x-cascader": Cascader
-    },
-    data () {
-      return {
-        selected: [],
-        source: []
-      };
-    },
-        created () {
-      ajax(0).then(result => {
-        this.source = result
-      })
-    },
-    methods: {
-      loadData ({id}, updateSource) {
-        ajax(id).then(result => {
-          updateSource(result) // 回调:把别人传给我的函数调用一下
-        })
-      },
-      xxx () {
-        ajax(this.selected[0].id).then(result => {
-          let lastLevelSelected = this.source.filter(item => item.id === this.selected[0].id)[0]
-          this.$set(lastLevelSelected, 'children', result)
-          console.log(1);
-        })
-      },
-      onUpdateSource () {
-      },
-      onUpdateSelected () {
-      }
+export default {
+  name: "demo",
+  components: {
+    "x-slides": Slides,
+    "x-slides-item": SlidesItem,
+  },
+  data() {
+    return {
+      selected: "2",
     }
-  };
+  },
+}
 </script>
 <style>
-  * {margin: 0; padding: 0; box-sizing: border-box;}
-  img {max-width: 100%;}
-  html {
-    --font-size: 14px;
-  }
-  body {
-    font-size: var(--font-size);
-  }
-</style> 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.wrapper {
+  margin: 40px;
+}
+.box {
+  width: 100%;
+  height: 350px;
+  background: #ddd;
+  border: 1px solid red;
+}
+</style>
