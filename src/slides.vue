@@ -1,11 +1,10 @@
 <template>
-  <div class="x-slides" 
-  @mouseenter="onMouseEnter" 
-  @mouseleave="onMouseLeave"
-  @touchstart="onTouchStart"
-  @touchmove="onTouchMove"
-  @touchend="onTouchEnd"
-  >
+  <div class="x-slides"
+    @mouseenter="onMouseEnter" 
+    @mouseleave="onMouseLeave"
+    @touchstart="onTouchStart"
+    @touchmove="onTouchMove"
+    @touchend="onTouchEnd">
     <div class="x-slides-window" ref="window">
       <div class="x-slides-wrapper">
         <slot></slot>
@@ -17,11 +16,19 @@
         <!-- {{n}} -->
       </span>
     </div>
+    <div class="x-slides-left" @click="onClickPrev">
+      <x-icon name="left"></x-icon>
+    </div>
+    <div class="x-slides-right" @click="onClickNext">
+      <x-icon name="right"></x-icon>
+    </div>
   </div>
 </template>
 
 <script>
+import XIcon from './icon'
 export default {
+  components:{XIcon},
   name: "XiSlides",
   props: {
     selected: {
@@ -43,7 +50,7 @@ export default {
   mounted() {
     this.updateChildren()
     this.playAutomatically()
-    this.childrenLength = this.$children.length
+    this.childrenLength = this.items.length
   },
   updated() {
     this.updateChildren()
@@ -54,10 +61,28 @@ export default {
       return index === -1? 0 : index 
     },
     names() {
-      return this.$children.map((vm) => vm.name)
+      return this.items.map((vm) => vm.name)
     },
+    items() {
+      return this.$children.filter(vm => vm.$options.name === 'XiSlidesItem')
+    }
   },
   methods: {
+    onClickPrev() {
+      this.select(this.selectedIndex-1)
+      //先随便给一个timeId,让他在点击是可以是无缝滚动，然后再取消掉，否则timerId会一直为1，不会自动轮播
+      this.timerId = 1  
+      this.$nextTick(()=> {
+        this.timerId = undefined
+      })
+    },
+    onClickNext() {
+      this.select(this.selectedIndex+1)
+      this.timerId = 1  
+      this.$nextTick(()=> {
+        this.timerId = undefined
+      })
+    },
     onMouseEnter() {
       this.pause()
       this.timerId = undefined
@@ -75,21 +100,21 @@ export default {
     onTouchEnd(e) {
       let endTouchPoint = e.changedTouches[0].clientX
       let distance = this.startTouchPoint - endTouchPoint
-      if(distance > 100) {
-        console.log('往右滑');
+      if(distance > 70) {
         this.select(this.selectedIndex + 1)
-      } else if(distance <-100 ) {
-        console.log('往左滑');
+      } else if(distance <-70 ) {
         this.select(this.selectedIndex - 1)
       }
-      this.playAutomatically()  
+      this.$nextTick(()=> {
+        this.timerId = undefined
+        this.playAutomatically()  
+      })
     },
     playAutomatically() {
       if(this.timerId) {return} // 如果有定时器，就不要继续添加定时器
       let run = () => {
         let index = this.names.indexOf(this.getSelected())
         let newIndex = index + 1
-        
         this.select(newIndex)
         this.timerId = setTimeout(run, 3000)
       }
@@ -99,29 +124,29 @@ export default {
     pause() {
       clearTimeout(this.timerId)
     },
-    select(index) {
+    select(newIndex) {
       this.lastSelectedIndex = this.selectedIndex
-      if (index === -1) {
-          index = this.names.length - 1
+      if (newIndex === -1) {
+          newIndex = this.names.length - 1
         }
-        if (index === this.names.length) {
-          index = 0
+        if (newIndex === this.names.length) {
+          newIndex = 0
         }
-      this.$emit("update:selected", this.names[index])
+      this.$emit("update:selected", this.names[newIndex])
     },
     getSelected() {
-      let first = this.$children[0]
+      let first = this.items[0]
       return this.selected || first.name
     },
     updateChildren() {
       let selected = this.getSelected()
-      this.$children.forEach((vm) => {
+      this.items.forEach((vm) => {
         let reverse = this.selectedIndex > this.lastSelectedIndex ? false : true
         if(this.timerId) { // 只有在轮播状态才需要进行无缝切换
-          if(this.lastSelectedIndex === this.$children.length-1 && this.selectedIndex ===0) {
+          if(this.lastSelectedIndex === this.items.length-1 && this.selectedIndex ===0) {
             reverse = false
           }
-          if(this.lastSelectedIndex === 0 && this.selectedIndex === this.$children.length-1) {
+          if(this.lastSelectedIndex === 0 && this.selectedIndex === this.items.length-1) {
             reverse = true
           }
         }
@@ -138,6 +163,7 @@ export default {
 <style lang="scss" scoped>
 .x-slides {
   position: relative;
+  -webkit-tap-highlight-color:rgba(0,0,0,0); //取消点击有蓝色框
   &-window {
     overflow: hidden;
   }
@@ -163,6 +189,36 @@ export default {
         background-color: rgba(black,0.5);
       }
     }
+  }
+  &-left,&-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-100%);
+    background-color: rgba(black,0.1);
+    width: 20px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: rgba(black,0.3);
+    cursor: pointer;
+  }
+  &-left:active {
+    background-color: rgba(black,0.5);
+  }
+  &-right:active {
+    background-color: rgba(black,0.5);
+  }
+  &-left {
+    left: 0;
+    border-top-right-radius: 40px;  
+    border-bottom-right-radius: 40px;
+  }
+  &-right {
+    right: 0;
+    border-top-left-radius: 40px;  
+    border-bottom-left-radius: 40px;
   }
 }
 </style>
