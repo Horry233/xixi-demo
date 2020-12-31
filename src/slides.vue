@@ -12,7 +12,7 @@
     </div>
     <div class="x-slides-dots">
       <span v-for="n in childrenLength" :key="n" :class="{active: selectedIndex === n-1}"
-        @click="select(n-1)">
+        @click="select(n-1)" :data-index="n-1">
         <!-- {{n}} -->
       </span>
     </div>
@@ -36,8 +36,12 @@ export default {
     },
     autoPlay: {
       type: Boolean,
-      default: true,
+      default: true
     },
+    autoPlayDelay: {
+      type: Number,
+      default: 3000
+    }
   },
   data() {
     return {
@@ -49,7 +53,9 @@ export default {
   },
   mounted() {
     this.updateChildren()
-    this.playAutomatically()
+    if(this.autoPlay) {
+      this.playAutomatically()
+    }
     this.childrenLength = this.items.length
   },
   updated() {
@@ -116,9 +122,9 @@ export default {
         let index = this.names.indexOf(this.getSelected())
         let newIndex = index + 1
         this.select(newIndex)
-        this.timerId = setTimeout(run, 3000)
+        this.timerId = setTimeout(run, this.autoPlayDelay)
       }
-      this.timerId = setTimeout(run, 3000)
+      this.timerId = setTimeout(run, this.autoPlayDelay)
       // 用 setTimeout 模拟 setInterval
     },
     pause() {
