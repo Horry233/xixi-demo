@@ -3,7 +3,6 @@
     @mouseenter="onMouseEnter" 
     @mouseleave="onMouseLeave"
     @touchstart="onTouchStart"
-    @touchmove="onTouchMove"
     @touchend="onTouchEnd">
     <div class="x-slides-window" ref="window">
       <div class="x-slides-wrapper">
@@ -16,10 +15,10 @@
         <!-- {{n}} -->
       </span>
     </div>
-    <div class="x-slides-left" @click="onClickPrev">
+    <div class="x-slides-left" @click="onClickPrev" data-action="prev">
       <x-icon name="left"></x-icon>
     </div>
-    <div class="x-slides-right" @click="onClickNext">
+    <div class="x-slides-right" @click="onClickNext" data-action="next">
       <x-icon name="right"></x-icon>
     </div>
   </div>
@@ -61,6 +60,9 @@ export default {
   updated() {
     this.updateChildren()
   },
+  beforeDestroy () {
+    this.pause()
+  },
   computed: {
     selectedIndex() {
       let index = this.names.indexOf(this.selected)
@@ -99,9 +101,6 @@ export default {
     onTouchStart(e) {
       this.pause()
       this.startTouchPoint = e.touches[0].clientX
-    },
-    onTouchMove(e) {
-
     },
     onTouchEnd(e) {
       let endTouchPoint = e.changedTouches[0].clientX
