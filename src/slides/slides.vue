@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import XIcon from './icon'
+import XIcon from '.././icon'
 export default {
   components:{XIcon},
   name: "XiSlides",

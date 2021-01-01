@@ -43,8 +43,6 @@
 </script>
 
 <style lang="scss" scoped>
-  .x-slides-item {
-  }
   .slide-leave-active {
     position: absolute;
     left: 0; top: 0;
