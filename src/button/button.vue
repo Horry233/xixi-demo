@@ -38,7 +38,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "../var";
+@import "../../styles/var";
 
 .x-button {
   font-size: $font-size; 
