@@ -2,7 +2,12 @@
   <div>
     <x-nav :selected.sync="selected">
       <x-nav-item name="home">首页</x-nav-item>
-      <x-nav-item name="about">关于</x-nav-item>
+      <x-sub-nav>
+        <template slot="title">关于</template>
+        <x-nav-item name="culture">企业文化</x-nav-item>
+        <x-nav-item name="developers">开发团队</x-nav-item>
+        <x-nav-item name="contacts">练习电话</x-nav-item>
+      </x-sub-nav>
       <x-nav-item name="hire">招聘</x-nav-item>
     </x-nav>
   </div>
@@ -20,7 +25,7 @@ export default {
   },
   data() {
     return {
-      selected: ['home'],
+      selected: ['culture'],
     }
   },
 }
