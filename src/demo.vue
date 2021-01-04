@@ -1,6 +1,6 @@
 <template>
   <div>
-    <x-slides class="wrapper" width="300px" height="200px" :selected.sync="selected">
+    <x-slides class="wrapper" width="300px" height="200px" :selected.sync="selected" :buttonVisible="false">
       <x-slides-item name="1">
         <div class="box">1</div>
       </x-slides-item>

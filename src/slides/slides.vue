@@ -15,10 +15,10 @@
         <!-- {{n}} -->
       </span>
     </div>
-    <div class="x-slides-left" @click="onClickPrev" data-action="prev">
+    <div class="x-slides-left" @click="onClickPrev" v-if="buttonVisible" data-action="prev">
       <x-icon name="left"></x-icon>
     </div>
-    <div class="x-slides-right" @click="onClickNext" data-action="next">
+    <div class="x-slides-right" @click="onClickNext" v-if="buttonVisible" data-action="next">
       <x-icon name="right"></x-icon>
     </div>
   </div>
@@ -40,6 +40,10 @@ export default {
     autoPlayDelay: {
       type: Number,
       default: 3000
+    },
+    buttonVisible: {
+      type: Boolean,
+      default: true
     }
   },
   data() {
