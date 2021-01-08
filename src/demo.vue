@@ -6,7 +6,18 @@
         <template slot="title">关于</template>
         <x-nav-item name="culture">企业文化</x-nav-item>
         <x-nav-item name="developers">开发团队</x-nav-item>
-        <x-nav-item name="contacts">练习电话</x-nav-item>
+        <x-sub-nav>
+          <template slot="title">联系方式</template>
+          <x-nav-item name="wechat">微信</x-nav-item>
+          <x-nav-item name="qq">QQ</x-nav-item>
+          <x-sub-nav>
+            <template slot="title">手机</template>
+            <x-nav-item name="cm">移动</x-nav-item>
+            <x-nav-item name="cu">联通</x-nav-item>
+            <x-nav-item name="cn">电信</x-nav-item>
+          </x-sub-nav>
+        </x-sub-nav>
+
       </x-sub-nav>
       <x-nav-item name="hire">招聘</x-nav-item>
     </x-nav>
