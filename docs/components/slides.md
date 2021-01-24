@@ -47,9 +47,15 @@ export default {
 ```
 :::
 # Attributes
+### Slides 
 |参数| 说明 |  类型  | 可选值 | 默认值 |
 | :-------------: |:-------------:| :-----:|:-----:|:-----:|
-| icon | 设置内置的icon |    String | settings，info，left，right，down, download，loading，like，error | -- 
-|iconPosition|图标位置|String|left、right|left
-| loading      | 加载状态      |  Boolean |true、false| false
-| disabled      | 禁用      |  Boolean |true、false| false
+| selected | 初始图片序号 |  String | -- | --
+|autoPlay|是否自动播放|Boolean|true、false|true
+| autoPlayDelay      | 自动播放的延时 |  Number | --| 3000
+| buttonVisible      | 左右按键的显示  |  Boolean |true、false| true
+
+### SlidesItem 
+|参数| 说明 |  类型  | 可选值 | 默认值 |
+| :-------------: |:-------------:| :-----:|:-----:|:-----:|
+| name | 图片序号 |  String | -- | --
