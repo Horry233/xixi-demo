@@ -15,11 +15,11 @@
 </template>
 
 <script>
-import Layout from '../../../src/layout'
-import Header from '../../../src/header'
-import Footer from '../../../src/footer'
-import Content from '../../../src/content'
-import Sider from '../../../src/sider'
+import Layout from '../../../src/layout/layout'
+import Header from '../../../src/layout/header'
+import Footer from '../../../src/layout/footer'
+import Content from '../../../src/layout/content'
+import Sider from '../../../src/layout/sider'
 
 export default {
   components: {

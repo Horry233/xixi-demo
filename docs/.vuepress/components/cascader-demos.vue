@@ -10,9 +10,9 @@
 </template>
 
 <script>
-  import Button from "./button/button"
-  import Cascader from "./cascader/cascader"
-  import db from '../tests/fixtures/db'
+  import Button from "../../../src/button/button"
+  import Cascader from "../../../src/cascader/cascader"
+  import db from '../../../tests/fixtures/db'
   
   function ajax (parentId = 0) {
       return new Promise((success, fail) => {
