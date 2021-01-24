@@ -2,7 +2,9 @@ module.exports = {
   base: '/xixi-demo/',
   title: '西西UI',
   description: '一个好用的UI框架',
+  head: [['link', { rel: 'icon', href: '/xigua.ico' }]],
   themeConfig: {
+    logo: '/logo.png',
     nav: [
       {text: '主页', link: '/'},
       {text: '文档', link: '/get-started/'},

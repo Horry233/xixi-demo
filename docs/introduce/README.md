@@ -14,12 +14,12 @@ title: 介绍
 ### 基本信息
 
 XIX-UI 是一个基于 Vue 的 UI 组件库，
-目前包括有 Button、Collapse、Grid、Input、Layout、Popover、Tabs、Toast 组件。
+目前包括有 Button、Cascader、Collapse、Grid、Input、Layout、Popover、Slides、Tabs、Toast 组件。
 项目尚未完工，持续更新中。
 
 XIX-UI是个人学习过程中造出来的UI库，如果你在使用过程中发现问题，
 非常感谢你提出宝贵意见。
-PS：目前项目属于开发中，暂不建议在生产项目中使用。
+**PS：目前项目属于开发中，暂不建议在生产项目中使用。**
 
 ### 作者
 

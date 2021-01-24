@@ -88,7 +88,5 @@ title: Cascader 级联选择器
 # Attributes
 |参数| 说明 |  类型  | 可选值 | 默认值 |
 | :-------------: |:-------------:| :-----:|:-----:|:-----:|
-| icon | 设置内置的icon |    String | settings，info，left，right，down, download，loading，like，error | -- 
-|iconPosition|图标位置|String|left、right|left
-| loading      | 加载状态      |  Boolean |true、false| false
-| disabled      | 禁用      |  Boolean |true、false| false
+| source | 级联选择器的数据源，格式较严格，用 .sync 绑定 |    Array | -- | -- 
+|selected|当前选中的数据 value 值的集合，按层级次序排序，用 .sync 绑定|Array|--|--
